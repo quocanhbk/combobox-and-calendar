@@ -1,0 +1,71 @@
+.combox-container {
+    display: inline-block;
+    width: 50%;
+    height: 2.5rem;
+}
+.combox-name {
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    padding: 0rem;
+    overflow-x: hidden;
+}
+.combox-bar {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+.combox-button {
+    padding: 0 1rem;
+    border: none;
+    color: black;
+    background: white;
+    border-radius: 0;
+}
+.combox-button:focus {
+    outline: none;
+}
+.combox-select {
+    background: #fff;
+    max-height: 15rem;
+}
+.combox-item {
+    padding: 0.5rem;
+}
+.combox-item-selecting {
+    background: #eee;
+}
+.combox-item:hover {
+    background: #ddd;
+}
+
+
+/* Item */
+.item-name {
+    margin: 0rem 0.2rem 0rem 0.2rem;
+    background: rgb(161, 222, 250);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75%;
+    animation: opa 0.3s linear 0s 1 normal forwards;
+    border-radius: 0.3rem;
+    padding: 0 0.4rem;
+    margin: 0.2rem;
+    cursor: pointer;
+    transition-duration: 2s;
+}
+.item-out {
+    animation: out 0.3s ease-out 0s 1 normal forwards;
+}
+@keyframes opa {
+    0% {transform: translateX(4vw);opacity: 0;}
+    100% {transform: translateX(0);opacity: 1;}
+}
+@keyframes out {
+    100% {transform: translateX(4vw); opacity: 0;}
+}

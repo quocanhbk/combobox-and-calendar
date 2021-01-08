@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
 import './App.css';
-
+import {Combox, Calendar} from './Hexcom'
 function App() {
+  const [data, setData] = useState([
+    {id: 1, name: 'La Quoc Anh'},
+    {id: 2, name: 'Nguyen Hoang Tan'},
+    {id: 3, name: 'Le Hoang Vu'},
+    {id: 4, name: 'Ngo Kim Son'},
+    {id: 5, name: 'Tran Thach Thao'}
+  ])
+  const [returnData, setReturnData] = useState([])
+  const [returnDate, setReturnDate] = useState({})
+  useEffect(() => {
+    console.log(returnData)
+    console.log(returnDate)
+  })
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Combox 
+        data={data} 
+        field='name' 
+        returnData={setReturnData} 
+        className="cmb"
+        multiple/>
+      <Calendar returnDate={setReturnDate}/>
+    
     </div>
   );
 }
